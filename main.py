@@ -31,3 +31,6 @@ car = input()
 if car == "SM3 Z.E":
     str_want_go = "SM3 Z.E"
     int_line = excel_source['지원차종'].str.contains(str_want_go)
+elif car == "레이EV":
+    str_want_go = "레이EV"
+    int_line = excel_source['지원차종'].str.contains(str_want_go)
