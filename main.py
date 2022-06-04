@@ -177,3 +177,5 @@ elif charger == "Slow":
 
 elif charger == "No Problem":
     chargingStationMarker.chargingStationMarker(g_map)
+      
+ g_map.save('.destination_map.html')
