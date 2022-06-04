@@ -92,3 +92,7 @@ if charger == "Fast":
     frames[1:] = [df[1:] for df in frames[1:]]
     combined = pd.concat(frames)
     combined.to_excel("C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx", header=False, index=False)
+      
+elif charger == "Slow":
+    int_line1 = excel_source['완속충전기(대)'].astype(str).str.contains("1")
+    int_line2 = excel_source['완속충전기(대)'].astype(str).str.contains("2")
