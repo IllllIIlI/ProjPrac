@@ -75,4 +75,7 @@ if charger == "Fast":
     want_go_excel = excel_source[int_line9]
     want_go_excel.to_excel(
         'ProjPrac/result_charger_9.xlsx', sheet_name='Fast_Charger')
-    excel_names = []
+    excel_names = ['ProjPrac/result_charger_1.xlsx', 'ProjPrac/result_charger_2.xlsx', 'ProjPrac/result_charger_3.xlsx', 'ProjPrac/result_charger_4.xlsx',
+                   'ProjPrac/result_charger_5.xlsx', 'ProjPrac/result_charger_6.xlsx', 'ProjPrac/result_charger_7.xlsx', 'ProjPrac/result_charger_8.xlsx',
+                   'ProjPrac/result_charger_9.xlsx']
+    excels = [pd.ExcelFile(name) for name in excel_names]
