@@ -2,6 +2,7 @@ import chargerGuide
 import chargingMethod
 import findCurLoc
 import findDestination
+import findTheDistanceBetweenCoordinates as Dis
 import pandas as pd
 import folium as g
 
@@ -166,3 +167,8 @@ marker_dst = g.Marker([dst_lat, dst_lng],
 
 location = [[cur_lat, cur_lng],
             [dst_lat, dst_lng]]
+
+tooltipPolyline = str(Dis.GeoUtil.get_harversion_distance(
+    cur_lng, cur_lat, dst_lng, dst_lat)) + "km"
+
+g.PolyLine(locations=location, tooltip=tooltipPolyline).add_to(g_map)
