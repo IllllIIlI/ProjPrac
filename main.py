@@ -51,3 +51,7 @@ want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xl
 excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xlsx', usecols=[1, 2, 3, 4, 5])
 
 chargerGuide.guide()
+
+print("Pick a charger that you want between a fast charger and a slow charger\n"
+      "Fast, Slow, No Problem")
+charger = input()
