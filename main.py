@@ -31,3 +31,6 @@ elif car == "닛산리프":
 elif car == "아이오닉EV":
     str_want_go = "아이오닉EV"
     int_line = excel_source['지원차종'].str.contains(str_want_go)
+elif car == "BMW i3":
+    str_want_go = "BMW i3"
+    int_line = excel_source['지원차종'].str.contains(str_want_go)
