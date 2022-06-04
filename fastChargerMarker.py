@@ -12,3 +12,6 @@ def fastChargerMarker(g_map):
         chg_lat, chg_lng = returnAddress.getloc(str(excel_source.loc[cnt]))
         lat.append(chg_lat)
         lng.append(chg_lng)
+    locations = list(zip(lat, lng))
+    icons = [g.Icon(icon='glyphicon glyphicon-flash',
+                    popup='Charging Station']
