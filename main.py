@@ -155,6 +155,9 @@ marker_cur = g.Marker([cur_lat, cur_lng],
 marker_dst = g.Marker([dst_lat, dst_lng],
             popup = 'Destination',
             icon=g.Icon(
-                color='green'
+                color='green',
+                icon_color='white',
+                icon='glyphicon glyphicon-flag',
+                prefix='glyphicon'
             )
             ).add_to(g_map)
