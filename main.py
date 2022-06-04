@@ -99,3 +99,7 @@ elif charger == "Slow":
     want_go_excel = excel_source[int_line1]
     want_go_excel.to_excel(
         'ProjPrac/result_charger_1.xlsx', sheet_name='Normal_Charger')
+    want_go_excel = excel_source[int_line2]
+    want_go_excel.to_excel(
+        'ProjPrac/result_charger_2.xlsx', sheet_name='Normal_Charger')
+    want_go_excel = excel_source[int_line3]
