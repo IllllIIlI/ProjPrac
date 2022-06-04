@@ -1,6 +1,8 @@
-import chargingMethod
 import pandas as pd
+import folium as g
+import chargingMethod
 import findCurLoc
+import findDestination
 import chargerGuide
 
 chargingMethod.guide()
@@ -132,3 +134,30 @@ elif charger == "Slow":
       
 elif charger == "No problem":
     excel_source.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx', sheet_name='Result')
+
+dst_lat, dst_lng = findDestination.find()
+
+g_map = g.Map(location=[dst_lat, dst_lng],
+              zoom_start = 20,
+              tiles= 'http://api.vworld.kr/req/wmts/1.0.0/D05C77C9-AB62-3E70-9183-0E044A461BBD/Base/{z}/{y}/{x}.png',
+              attr = 'VworldBase')
+      
+marker_cur = g.Marker([cur_lat, cur_lng],
+            popup = 'The starting point',
+            icon=g.Icon(
+                color='red',
+                icon_color='white',
+                icon='glyphicon glyphicon-map-marker',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
+      
+marker_dst = g.Marker([dst_lat, dst_lng],
+            popup = 'Destination',
+            icon=g.Icon(
+                color='green',
+                icon_color='white',
+                icon='glyphicon glyphicon-flag',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
