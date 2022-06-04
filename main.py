@@ -117,3 +117,7 @@ elif charger == "Slow":
     want_go_excel.to_excel('result2_1.xlsx', sheet_name='Result')
     want_go_excel = excel_source[int_line2]
     want_go_excel.to_excel('result2_2.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line3]
+    want_go_excel.to_excel('result2_3.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line4]
+    want_go_excel.to_excel('result2_4.xlsx', sheet_name='Result')
