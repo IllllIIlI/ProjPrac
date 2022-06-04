@@ -168,3 +168,12 @@ location = [[cur_lat, cur_lng],
 tooltipPolyline = str(Dis.GeoUtil.get_harversion_distance(cur_lng, cur_lat, dst_lng, dst_lat)) + "km"
 
 g.PolyLine(locations=location, tooltip=tooltipPolyline).add_to(g_map)
+
+if charger == "Fast":
+    fastChargerMarker.fastChargerMarker(g_map)
+
+elif charger == "Slow":
+    slowChargerMarker.slowChargerMarker(g_map)
+
+elif charger == "No Problem":
+    chargingStationMarker.chargingStationMarker(g_map)
