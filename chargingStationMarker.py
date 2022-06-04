@@ -13,4 +13,10 @@ def chargingStationMarker(g_map):
         lng.append(chg_lng)
     locations = list(zip(lat, lng))
     icons = [g.Icon(icon='glyphicon glyphicon-flash',
-                    popup='Charging Station')
+                    popup='Charging Station',
+                    prefix="glyphicon",
+                    color='gray',
+                    icon_color='#FFFF00') for _ in range(len(locations))]
+
+    cluster = MarkerCluster(locations = locations, icons = icons)
+    cluster.add_to(g_map)
