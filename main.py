@@ -140,3 +140,17 @@ elif charger == "No Problem":
         'ProjPrac/result_charger.xlsx', sheet_name='Normal_Charger')
 
 dst_lat, dst_lng = findDestination.Find()
+
+g_map = g.Map(location=[dst_lat, dst_lng],
+              zoom_start=20,
+              tiles='http://api.vworld.kr/req/wmts/1.0.0/D05C77C9-AB62-3E70-9183-0E044A461BBD/Base/{z}/{y}/{x}.png',
+              attr='VworldBase')
+
+marker_cur = g.Marker([cur_lat, cur_lng],
+                      popup='The starting point',
+                      icon=g.Icon(
+    color='red',
+    icon_color='white',
+    icon='glyphicon glyphicon-map-marker',
+    prefix='glyphicon'
+)).add_to(g_map)
