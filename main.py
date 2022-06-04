@@ -49,3 +49,8 @@ if charger == "Fast":
     int_line8 = excel_source['급속충전기(대)'].astype(str).str.contains("8")
     int_line9 = excel_source['급속충전기(대)'].astype(str).str.contains("9")
     want_go_excel = excel_source[int_line1]
+    want_go_excel.to_excel(
+        'ProjPrac/result_charger_1.xlsx', sheet_name='Fast_Charger')
+    want_go_excel = excel_source[int_line2]
+    want_go_excel.to_excel(
+        'ProjPrac/result_charger_2.xlsx', sheet_name='Fast_Charger')
