@@ -126,6 +126,11 @@ elif charger == "Slow":
     want_go_excel = excel_source[int_line6]
     want_go_excel.to_excel('result2_6.xlsx', sheet_name='Result')
     want_go_excel = excel_source[int_line7]
-    want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_7.xlsx', sheet_name='Result')
+    want_go_excel.to_excel('result2_7.xlsx', sheet_name='Result')
     want_go_excel = excel_source[int_line8]
-    want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_8.xlsx', sheet_name='Result')
+    want_go_excel.to_excel('result2_8.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line9]
+    want_go_excel.to_excel('result2_9.xlsx', sheet_name='Result')
+    excel_names = ['result2_1.xlsx', 'result2_2.xlsx', 'result2_3.xlsx', 'result2_4.xlsx',
+                   'result2_5.xlsx', 'result2_6.xlsx', 'result2_7.xlsx', 'result2_8.xlsx',
+                   'result2_9.xlsx']
