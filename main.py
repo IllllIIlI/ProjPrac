@@ -26,3 +26,8 @@ want_go_excel.to_excel('result.xlsx', sheet_name= 'Result')
 excel_source = pd.read_excel('result.xlsx', usecols=[1, 2, 3, 4, 5])
 print("원하는 차종을 입력하세요.\n"
       "SM3 Z.E, 레이EV, 소울EV, 닛산리프, 아이오닉EV, BMW i3, 스파크EV, 볼트EV, 테슬라")
+
+car = input()
+if car == "SM3 Z.E":
+    str_want_go = "SM3 Z.E"
+    int_line = excel_source['지원차종'].str.contains(str_want_go)
