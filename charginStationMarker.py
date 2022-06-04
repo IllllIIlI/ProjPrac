@@ -18,3 +18,6 @@ def chargingStationMarker(map):
                     prefix="glyphicon",
                     color='gray',
                     icon_color='#FFFF00') for _ in range(len(locations))]
+
+    cluster = MarkerCluster(locations=locations, icons=icons)
+    cluster.add_to(map)
