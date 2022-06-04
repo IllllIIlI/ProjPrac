@@ -1,6 +1,7 @@
 import chargingMethod
 import pandas as pd
 import findCurLoc
+import chargerGuide
 
 chargingMethod.guide()
 excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/전기차-충전소-설치현황_20220316.xlsx', usecols=[1, 2, 3, 4, 5])
@@ -46,3 +47,7 @@ elif car == "테슬라":
       
 want_go_excel = excel_source[int_line]
 want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xlsx', sheet_name= 'Result')
+      
+excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xlsx', usecols=[1, 2, 3, 4, 5])
+
+chargerGuide.guide()
