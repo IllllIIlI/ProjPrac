@@ -37,3 +37,6 @@ excel_source = pd.read_excel(
 chargerGuide.guide()
 print("Pick a charger that you want between a fast charger and a slow charger\n"
       "Fast, Slow, No Problem")
+charger = input()
+if charger == "Fast":
+    int_line1 = excel_source['급속충전기(대)'].astype(str).str.contains("1")
