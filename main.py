@@ -196,3 +196,7 @@ shortest_route_map = ox.plot_route_folium(
     graph, shortest_route, zoom=20, route_map=g_map)
 
 g_map.save('.destination_map.html')
+
+app = QtWidgets.QApplication(sys.argv)
+data = io.BytesIO()
+g_map.save(data, close_file=False)
