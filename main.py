@@ -134,3 +134,10 @@ elif charger == "Slow":
     excel_names = ['result2_1.xlsx', 'result2_2.xlsx', 'result2_3.xlsx', 'result2_4.xlsx',
                    'result2_5.xlsx', 'result2_6.xlsx', 'result2_7.xlsx', 'result2_8.xlsx',
                    'result2_9.xlsx']
+    excels = [pd.ExcelFile(name) for name in excel_names]
+    frames = [x.parse(x.sheet_names[0], header=None, index_col=None) for x in excels]
+    frames[1:] = [df[1:] for df in frames[1:]]
+    combined = pd.concat(frames)
+    combined.to_excel("result2.xlsx", header=False, index=False)
+elif charger == "No problem":
+    excel_source.to_excel('result2.xlsx', sheet_name='Result')
