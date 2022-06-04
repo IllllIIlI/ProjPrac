@@ -112,3 +112,8 @@ elif charger == "Slow":
     int_line6 = excel_source['완속충전기(대)'].astype(str).str.contains("6")
     int_line7 = excel_source['완속충전기(대)'].astype(str).str.contains("7")
     int_line8 = excel_source['완속충전기(대)'].astype(str).str.contains("8")
+    int_line9 = excel_source['완속충전기(대)'].astype(str).str.contains("9")
+    want_go_excel = excel_source[int_line1]
+    want_go_excel.to_excel('result2_1.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line2]
+    want_go_excel.to_excel('result2_2.xlsx', sheet_name='Result')
