@@ -19,3 +19,10 @@ class GeoUtil:
         R = 6371
         dLon = GeoUtil.degree2radius(x2 - x1)
         dLat = GeoUtil.degree2radius(y2 - y1)
+        
+        a = math.sin(dLat / 2) * math.sin(dLat / 2) \
+            + (math.cos(GeoUtil.degree2radius(y1)) \
+               * math.cos(GeoUtil.degree2radius(y2)) \
+               * math.sin(dLon / 2) * math.sin(dLon / 2))
+        b = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return round(R * b, round_decimal_digits)
