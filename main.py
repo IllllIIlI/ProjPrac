@@ -31,3 +31,9 @@ line = excel_source['지원차종'].str.contains(car)
 want_go_excel = excel_source[line]
 want_go_excel.to_excel(
     'ProjPrac/result1.xlsx', sheet_name='Result')
+
+excel_source = pd.read_excel(
+    'ProjPrac/result1.xlsx', usecols=[1, 2, 3, 4, 5])
+chargerGuide.guide()
+print("Pick a charger that you want between a fast charger and a slow charger\n"
+      "Fast, Slow, No Problem")
