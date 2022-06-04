@@ -24,3 +24,10 @@ excel_source = pd.read_excel(
     'ProjPrac/result.xlsx', usecols=[1, 2, 3, 4, 5])
 print("Please enter the type of car you want.\n"
       "SM3 Z.E, 레이EV, 소울EV, 닛산리프, 아이오닉EV, BMW i3, 스파크EV, 볼트EV, 테슬라")
+
+car = input()
+line = excel_source['지원차종'].str.contains(car)
+
+want_go_excel = excel_source[line]
+want_go_excel.to_excel(
+    'ProjPrac/result1.xlsx', sheet_name='Result')
