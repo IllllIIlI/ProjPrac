@@ -10,6 +10,9 @@ import pandas as pd
 import folium as g
 import osmnx as ox
 import networkx as nx
+import sys
+import io
+from PyQt5 import QtWidgets, QtWebEngineWidgets
 
 cur_lat = 0.0
 cur_lng = 0.0
