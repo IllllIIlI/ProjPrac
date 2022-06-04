@@ -55,3 +55,8 @@ elif car == "볼트EV":
 elif car == "테슬라":
     str_want_go = "테슬라"
     int_line = excel_source['지원차종'].str.contains(str_want_go)
+
+want_go_excel = excel_source[int_line]
+want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xlsx', sheet_name= 'Result')
+
+excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result1.xlsx', usecols=[1, 2, 3, 4, 5])
