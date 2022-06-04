@@ -153,4 +153,8 @@ marker_cur = g.Marker([cur_lat, cur_lng],
             popup = 'The starting point',
             icon=g.Icon(
                 color='red',
-                icon_color='white')
+                icon_color='white',
+                icon='glyphicon glyphicon-map-marker',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
