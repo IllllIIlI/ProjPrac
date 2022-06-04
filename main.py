@@ -78,3 +78,7 @@ if charger == "Fast":
     want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_5.xlsx', sheet_name='Result')
     want_go_excel = excel_source[int_line6]
     want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_6.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line7]
+    want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_7.xlsx', sheet_name='Result')
+    want_go_excel = excel_source[int_line8]
+    want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_8.xlsx', sheet_name='Result')
