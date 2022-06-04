@@ -4,6 +4,9 @@ import chargingMethod
 import findCurLoc
 import findDestination
 import chargerGuide
+import chargingStationMarker
+import fastChargerMarker
+import slowChargerMarker
 
 chargingMethod.guide()
 excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/전기차-충전소-설치현황_20220316.xlsx', usecols=[1, 2, 3, 4, 5])
