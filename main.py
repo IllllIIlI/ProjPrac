@@ -9,6 +9,7 @@ import chargingStationMarker
 import pandas as pd
 import folium as g
 import osmnx as ox
+import networkx as nx
 
 cur_lat = 0.0
 cur_lng = 0.0
@@ -190,3 +191,8 @@ graph = ox.graph_from_place(
     '서원구, 청주시, 대한민국', network_type='drive')
 orig_node = ox.nearest_nodes(graph, cur_lng, cur_lat)
 dest_node = ox.nearest_nodes(graph, dst_lng, dst_lat)
+shortest_route = nx.shortest_path(graph, orig_node, dest_node, weight='lengh')
+shortest_route_map = ox.plot_route_folium(
+    graph, shortest_route, zoom=20, route_map=g_map)
+
+g_map.save('.destination_map.html')
