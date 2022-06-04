@@ -8,6 +8,7 @@ import slowChargerMarker
 import chargingStationMarker
 import pandas as pd
 import folium as g
+import osmnx as ox
 
 cur_lat = 0.0
 cur_lng = 0.0
@@ -184,3 +185,8 @@ elif charger == "Slow":
 
 elif charger == "No Problem":
     chargingStationMarker.chargingStationMarker(g_map)
+
+graph = ox.graph_from_place(
+    '서원구, 청주시, 대한민국', network_type='drive')
+orig_node = ox.nearest_nodes(graph, cur_lng, cur_lat)
+dest_node = ox.nearest_nodes(graph, dst_lng, dst_lat)
