@@ -178,3 +178,11 @@ g.PolyLine(locations=location, tooltip=tooltipPolyline).add_to(g_map)
 
 if charger == "Fast":
     fastChargerMarker.fastChargerMarker(g_map)
+
+elif charger == "Slow":
+    slowChargerMarker.slowChargerMarker(g_map)
+
+elif charger == "No Problem":
+    chargingStationMarker.chargingStationMarker(g_map)
+
+g_map.save('.destination_map.html')
