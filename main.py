@@ -58,3 +58,8 @@ if charger == "Fast":
     want_go_excel.to_excel(
         'ProjPrac/result_charger_3.xlsx', sheet_name='Fast_Charger')
     want_go_excel = excel_source[int_line4]
+    want_go_excel.to_excel(
+        'ProjPrac/result_charger_4.xlsx', sheet_name='Fast_Charger')
+    want_go_excel = excel_source[int_line5]
+    want_go_excel.to_excel(
+        'ProjPrac/result_charger_5.xlsx', sheet_name='Fast_Charger')
