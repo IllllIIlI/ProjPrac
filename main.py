@@ -132,3 +132,5 @@ elif charger == "Slow":
       
 elif charger == "No problem":
     excel_source.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx', sheet_name='Result')
+
+dst_lat, dst_lng = findDestination.find()
