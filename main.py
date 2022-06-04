@@ -129,3 +129,6 @@ elif charger == "Slow":
     frames[1:] = [df[1:] for df in frames[1:]]
     combined = pd.concat(frames)
     combined.to_excel("C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx", header=False, index=False)
+      
+elif charger == "No problem":
+    excel_source.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx', sheet_name='Result')
