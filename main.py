@@ -131,3 +131,8 @@ elif charger == "Slow":
               for x in excels]
     frames[1:] = [df[1:] for df in frames[1:]]
     combined = pd.concat(frames)
+    combined.to_excel(
+        "ProjPrac/result_charger.xlsx", header=False, index=False)
+elif charger == "No Problem":
+    excel_source.to_excel(
+        'ProjPrac/result_charger.xlsx', sheet_name='Normal_Charger')
