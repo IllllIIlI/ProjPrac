@@ -1,7 +1,13 @@
 import chargingMethod
 import pandas as pd
+import folium as g
 import findCurLoc
+import findDestination
 import chargerGuide
+import findTheDistanceBetweenCoordinates as Dis
+import chargingStationMarker
+import fastChargerMarker
+import slowChargerMarker
 
 chargingMethod.guide()
 excel_source = pd.read_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/전기차-충전소-설치현황_20220316.xlsx', usecols=[1, 2, 3, 4, 5])
@@ -132,3 +138,47 @@ elif charger == "Slow":
       
 elif charger == "No problem":
     excel_source.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx', sheet_name='Result')
+
+dst_lat, dst_lng = findDestination.find()
+      
+g_map = g.Map(location=[dst_lat, dst_lng],
+              zoom_start = 20,
+              tiles='http://api.vworld.kr/req/wmts/1.0.0/D05C77C9-AB62-3E70-9183-0E044A461BBD/Base/{z}/{y}/{x}.png',
+              attr = 'VworldBase')
+marker_cur = g.Marker([cur_lat, cur_lng],
+            popup = 'The starting point',
+            icon=g.Icon(
+                color='red',
+                icon_color='white',
+                icon='glyphicon glyphicon-map-marker',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
+      
+marker_dst = g.Marker([dst_lat, dst_lng],
+            popup = 'Destination',
+            icon=g.Icon(
+                color='green',
+                icon_color='white',
+                icon='glyphicon glyphicon-flag',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
+
+location = [[cur_lat, cur_lng],
+            [dst_lat, dst_lng]]
+
+tooltipPolyline = str(Dis.GeoUtil.get_harversion_distance(cur_lng, cur_lat, dst_lng, dst_lat)) + "km"
+
+g.PolyLine(locations=location, tooltip=tooltipPolyline).add_to(g_map)
+
+if charger == "Fast":
+    fastChargerMarker.fastChargerMarker(g_map)
+
+elif charger == "Slow":
+    slowChargerMarker.slowChargerMarker(g_map)
+
+elif charger == "No Problem":
+    chargingStationMarker.chargingStationMarker(g_map)
+
+g_map.save('.destination_map.html')
