@@ -141,3 +141,10 @@ elif charger == "Slow":
     combined.to_excel("result2.xlsx", header=False, index=False)
 elif charger == "No problem":
     excel_source.to_excel('result2.xlsx', sheet_name='Result')
+
+dst_lat, dst_lng = findDestination.find()
+
+g_map = g.Map(location=[dst_lat, dst_lng],
+              zoom_start = 20,
+              tiles='http://api.vworld.kr/req/wmts/1.0.0/D05C77C9-AB62-3E70-9183-0E044A461BBD/Base/{z}/{y}/{x}.png',
+              attr = 'VworldBase')
