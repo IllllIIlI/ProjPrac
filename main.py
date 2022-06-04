@@ -1,7 +1,9 @@
 import chargerGuide
 import chargingMethod
 import findCurLoc
+import findDestination
 import pandas as pd
+import folium as g
 
 cur_lat = 0.0
 cur_lng = 0.0
@@ -136,3 +138,5 @@ elif charger == "Slow":
 elif charger == "No Problem":
     excel_source.to_excel(
         'ProjPrac/result_charger.xlsx', sheet_name='Normal_Charger')
+
+dst_lat, dst_lng = findDestination.Find()
