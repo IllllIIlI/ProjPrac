@@ -1,8 +1,8 @@
 # TeamProjPrac
 
-Installl instruction
+Install instruction
 
-$git clone https://github.com/IllllIIlI/ProjPrac.git
+	$git clone https://github.com/IllllIIlI/ProjPrac.git
 
 Requires Python >= 3.6
 
@@ -20,6 +20,6 @@ Starting instruction
 
 Needs GoogleMaps API Key at returnAddress.py gmaps = googlemaps.Client(key='YOUR KEY')
 
-$cd ProjPrac; python3 main.py
+	$cd ProjPrac; python3 main.py
 
 MIT Lisence, G.W.Park401@gmail.com
