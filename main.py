@@ -141,3 +141,10 @@ g_map = g.Map(location=[dst_lat, dst_lng],
               zoom_start = 20,
               tiles= 'http://api.vworld.kr/req/wmts/1.0.0/D05C77C9-AB62-3E70-9183-0E044A461BBD/Base/{z}/{y}/{x}.png',
               attr = 'VworldBase')
+      
+marker_cur = g.Marker([cur_lat, cur_lng],
+            popup = 'The starting point',
+            icon=g.Icon(
+                color='red'
+            )
+            ).add_to(g_map)
