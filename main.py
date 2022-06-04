@@ -109,3 +109,6 @@ elif charger == "Slow":
     int_line3 = excel_source['완속충전기(대)'].astype(str).str.contains("3")
     int_line4 = excel_source['완속충전기(대)'].astype(str).str.contains("4")
     int_line5 = excel_source['완속충전기(대)'].astype(str).str.contains("5")
+    int_line6 = excel_source['완속충전기(대)'].astype(str).str.contains("6")
+    int_line7 = excel_source['완속충전기(대)'].astype(str).str.contains("7")
+    int_line8 = excel_source['완속충전기(대)'].astype(str).str.contains("8")
