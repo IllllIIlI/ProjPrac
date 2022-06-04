@@ -161,3 +161,8 @@ marker_dst = g.Marker([dst_lat, dst_lng],
                 prefix='glyphicon'
             )
             ).add_to(g_map)
+
+location = [[cur_lat, cur_lng],
+            [dst_lat, dst_lng]]
+
+tooltipPolyline = str(Dis.GeoUtil.get_harversion_distance(cur_lng, cur_lat, dst_lng, dst_lat)) + "km"
