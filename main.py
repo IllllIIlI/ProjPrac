@@ -151,7 +151,6 @@ marker_cur = g.Marker([cur_lat, cur_lng],
                 color='red',
                 icon_color='white',
                 icon='glyphicon glyphicon-map-marker',
-                # googledp glyphicon 검색해서 관련된 코드 제공해주는 사이트들 참고해서 원하는 것 가져오기
                 prefix='glyphicon'
             )
             ).add_to(g_map)
@@ -159,4 +158,9 @@ marker_cur = g.Marker([cur_lat, cur_lng],
 marker_dst = g.Marker([dst_lat, dst_lng],
             popup = 'Destination',
             icon=g.Icon(
-                color='green')
+                color='green',
+                icon_color='white',
+                icon='glyphicon glyphicon-flag',
+                prefix='glyphicon'
+            )
+            ).add_to(g_map)
