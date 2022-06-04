@@ -3,6 +3,9 @@ import chargingMethod
 import findCurLoc
 import findDestination
 import findTheDistanceBetweenCoordinates as Dis
+import fastChargerMarker
+import slowChargerMarker
+import chargingStationMarker
 import pandas as pd
 import folium as g
 
