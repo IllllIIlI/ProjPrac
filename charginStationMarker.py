@@ -8,3 +8,7 @@ def chargingStationMarker(map):
     excel_source = pd.read_excel('ProjPrac/result_charger.xlsx', usecols=[2])
     lat = []
     lng = []
+    for count in range(excel_source.shape[0]):
+        chg_lat, chg_lng = returnAddress.GetLoc(str(excel_source.loc[count]))
+        lat.append(chg_lat)
+        lng.append(chg_lng)
