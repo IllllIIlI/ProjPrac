@@ -66,3 +66,7 @@ chargerGuide.guide()
 print("Pick a charger that you want between a fast charger and a slow charger\n"
       "Fast, Slow, No Problem")
 charger = input()
+if charger == "Fast":
+    int_line1 = excel_source['급속충전기(대)'].astype(str).str.contains("1")
+    int_line2 = excel_source['급속충전기(대)'].astype(str).str.contains("2")
+    int_line3 = excel_source['급속충전기(대)'].astype(str).str.contains("3")
