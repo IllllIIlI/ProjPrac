@@ -93,15 +93,15 @@ if charger == "Fast":
     want_go_excel = excel_source[int_line8]
     want_go_excel.to_excel('result2_8.xlsx', sheet_name='Result')
     want_go_excel = excel_source[int_line9]
-    want_go_excel.to_excel('C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_9.xlsx', sheet_name='Result')
-    excel_names = ['C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_1.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_2.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_3.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_4.xlsx',
-                   'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_5.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_6.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_7.xlsx', 'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_8.xlsx',
-                   'C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2_9.xlsx']
+    want_go_excel.to_excel('result2_9.xlsx', sheet_name='Result')
+    excel_names = ['result2_1.xlsx', 'result2_2.xlsx', 'result2_3.xlsx', 'result2_4.xlsx',
+                   'result2_5.xlsx', 'result2_6.xlsx', 'result2_7.xlsx', 'result2_8.xlsx',
+                   'result2_9.xlsx']
     excels = [pd.ExcelFile(name) for name in excel_names]
     frames = [x.parse(x.sheet_names[0], header=None, index_col=None) for x in excels]
     frames[1:] = [df[1:] for df in frames[1:]]
     combined = pd.concat(frames)
-    combined.to_excel("C:/Users/cksdn/PycharmProjects/OSS_Project_04/result2.xlsx", header=False, index=False)
+    combined.to_excel("result2.xlsx", header=False, index=False)
 
 elif charger == "Slow":
     int_line1 = excel_source['완속충전기(대)'].astype(str).str.contains("1")
