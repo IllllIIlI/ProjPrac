@@ -15,3 +15,7 @@ class GeoUtil:
         assert isinstance(y1, numbers.Number) and -90 <= y1 and y1 <= 90
         assert isinstance(x2, numbers.Number) and -180 <= x2 and x2 <= 180
         assert isinstance(y2, numbers.Number) and -90 <= y2 and y2 <= 90
+     
+    R = 6371  # 지구의 반경(단위: km)
+    dLon = GeoUtil.degree2radius(x2 - x1)
+    dLat = GeoUtil.degree2radius(y2 - y1)
